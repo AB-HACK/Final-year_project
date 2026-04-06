@@ -1,0 +1,18 @@
+[
+  "commodity_encoded",
+  "market_encoded",
+  "admin1_encoded",
+  "pricetype_encoded",
+  "category_encoded",
+  "year",
+  "month",
+  "quarter",
+  "is_harvest_season",
+  "price_lag_1",
+  "price_lag_3",
+  "price_lag_6",
+  "price_lag_12",
+  "price_rolling_mean_3",
+  "price_rolling_std_3",
+  "price_rolling_mean_6"
+]

@@ -1,0 +1,35 @@
+{
+  "model_name": "Linear Regression",
+  "mae": 17.0307447248985,
+  "rmse": 29.30636077905822,
+  "r2": 0.9795299553963879,
+  "train_size": 5082,
+  "test_size": 1271,
+  "train_date_range": [
+    "2003-01-15",
+    "2022-05-15"
+  ],
+  "test_date_range": [
+    "2022-05-15",
+    "2023-01-15"
+  ],
+  "feature_columns": [
+    "commodity_encoded",
+    "market_encoded",
+    "admin1_encoded",
+    "pricetype_encoded",
+    "category_encoded",
+    "year",
+    "month",
+    "quarter",
+    "is_harvest_season",
+    "price_lag_1",
+    "price_lag_3",
+    "price_lag_6",
+    "price_lag_12",
+    "price_rolling_mean_3",
+    "price_rolling_std_3",
+    "price_rolling_mean_6"
+  ],
+  "trained_on": "2026-04-06"
+}

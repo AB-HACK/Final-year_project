@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}About | PredictAgro{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-10">
+    <div class="card border-0 shadow-sm mb-4">
+      <div class="card-body p-4">
+        <h1 class="h3 mb-3">About PredictAgro</h1>
+        <p class="mb-2">
+          PredictAgro is a machine learning-based crop price prediction system built for smallholder farmers in Nigeria as a BSc final year project.
+        </p>
+        <p class="mb-0 text-muted">
+          The goal is to support data-driven decisions by forecasting likely commodity prices ahead of time.
+        </p>
+      </div>
+    </div>
+
+    <div class="card border-0 shadow-sm mb-4">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Dataset Information</h2>
+        <p class="mb-0">
+          The project uses the WFP Nigeria food prices dataset (2002-2023), covering market-level commodity price observations across Nigerian states and markets.
+        </p>
+      </div>
+    </div>
+
+    <div class="card border-0 shadow-sm mb-4">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Models Compared</h2>
+        <ul class="mb-3">
+          <li>Linear Regression</li>
+          <li>Decision Tree</li>
+          <li>Random Forest</li>
+        </ul>
+
+        <div class="table-responsive">
+          <table class="table table-striped align-middle">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>MAE</th>
+                <th>RMSE</th>
+                <th>R²</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Linear Regression</td>
+                <td>17.03</td>
+                <td>29.31</td>
+                <td>0.980</td>
+              </tr>
+              <tr>
+                <td>Decision Tree</td>
+                <td>23.60</td>
+                <td>57.42</td>
+                <td>0.921</td>
+              </tr>
+              <tr>
+                <td>Random Forest</td>
+                <td>16.96</td>
+                <td>33.92</td>
+                <td>0.973</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="mb-0">
+          <strong>Selected best model:</strong> Linear Regression (based on lowest RMSE).
+        </p>
+      </div>
+    </div>
+
+    <div class="alert alert-light border mb-0">
+      Data source credit: <strong>World Food Programme (WFP)</strong> / <strong>HDX</strong>.
+    </div>
+  </div>
+</div>
+{% endblock %}

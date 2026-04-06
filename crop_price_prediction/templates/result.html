@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction Result | PredictAgro{% endblock %}
+
+{% block content %}
+{% set diff = predicted_price - previous_price %}
+{% if trend == "Increasing" %}
+  {% set badge_class = "bg-success" %}
+  {% set arrow = "↑" %}
+{% elif trend == "Decreasing" %}
+  {% set badge_class = "bg-danger" %}
+  {% set arrow = "↓" %}
+{% else %}
+  {% set badge_class = "bg-secondary" %}
+  {% set arrow = "→" %}
+{% endif %}
+
+{% set confidence_value = confidence.replace('%', '')|float %}
+
+<div class="row justify-content-center">
+  <div class="col-lg-9">
+    <div class="card border-0 shadow-sm mb-4">
+      <div class="card-body text-center p-4">
+        <p class="text-muted mb-2">Predicted Price</p>
+        <h1 class="display-5 fw-bold mb-3">₦ {{ "%.2f"|format(predicted_price) }} / KG</h1>
+        <span class="badge {{ badge_class }} fs-6 px-3 py-2">{{ arrow }} {{ trend }}</span>
+      </div>
+    </div>
+
+    <div class="card border-0 shadow-sm mb-4">
+      <div class="card-body">
+        <h5 class="card-title mb-3">Confidence</h5>
+        <div class="progress" role="progressbar" aria-valuenow="{{ confidence_value }}" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar bg-success" style="width: {{ confidence }};">{{ confidence }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card border-0 shadow-sm mb-4">
+      <div class="card-body">
+        <h5 class="card-title mb-3">Prediction Summary</h5>
+        <div class="row g-3">
+          <div class="col-md-6"><strong>Commodity:</strong> {{ commodity }}</div>
+          <div class="col-md-6"><strong>Market:</strong> {{ market }}</div>
+          <div class="col-md-6"><strong>Target Month/Year:</strong> {{ month }}/{{ year }}</div>
+          <div class="col-md-6"><strong>Model:</strong> {{ model_name }}</div>
+          <div class="col-md-6"><strong>Previous Price:</strong> ₦ {{ "%.2f"|format(previous_price) }}</div>
+          <div class="col-md-6"><strong>Predicted Price:</strong> ₦ {{ "%.2f"|format(predicted_price) }}</div>
+          <div class="col-12"><strong>Change:</strong> ₦ {{ "%.2f"|format(diff) }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="/" class="btn btn-naija btn-lg">Make Another Prediction</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
