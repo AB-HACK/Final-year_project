@@ -1,8 +1,31 @@
 {
-  "model_name": "Linear Regression",
-  "mae": 17.0307447248985,
-  "rmse": 29.30636077905822,
-  "r2": 0.9795299553963879,
+  "best_model_name": "Deep Neural Network",
+  "model_name": "Deep Neural Network",
+  "all_results": {
+    "Linear Regression": {
+      "MAE": 17.03,
+      "RMSE": 29.31,
+      "R2": 0.98
+    },
+    "Decision Tree": {
+      "MAE": 23.6,
+      "RMSE": 57.42,
+      "R2": 0.921
+    },
+    "Random Forest": {
+      "MAE": 16.96,
+      "RMSE": 33.92,
+      "R2": 0.973
+    },
+    "Deep Neural Network": {
+      "MAE": 18.83,
+      "RMSE": 28.48,
+      "R2": 0.981
+    }
+  },
+  "mae": 18.83,
+  "rmse": 28.48,
+  "r2": 0.981,
   "train_size": 5082,
   "test_size": 1271,
   "train_date_range": [
@@ -31,5 +54,7 @@
     "price_rolling_std_3",
     "price_rolling_mean_6"
   ],
-  "trained_on": "2026-04-06"
+  "trained_on": "2026-05-04",
+  "dnn_model_path": "src/models/dnn_model.keras",
+  "scaler_path": "src/models/scaler.pkl"
 }

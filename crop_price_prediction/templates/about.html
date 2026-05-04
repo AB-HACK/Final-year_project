@@ -33,43 +33,55 @@
           <li>Linear Regression</li>
           <li>Decision Tree</li>
           <li>Random Forest</li>
+          <li>Deep Neural Network (TensorFlow/Keras)</li>
         </ul>
 
         <div class="table-responsive">
-          <table class="table table-striped align-middle">
-            <thead>
+          <table class="table table-bordered table-striped">
+            <thead class="table-dark">
               <tr>
                 <th>Model</th>
-                <th>MAE</th>
-                <th>RMSE</th>
-                <th>R²</th>
+                <th>MAE (₦/KG)</th>
+                <th>RMSE (₦/KG)</th>
+                <th>R² Score</th>
+                <th>Verdict</th>
               </tr>
             </thead>
             <tbody>
+              <tr class="table-success fw-bold">
+                <td>Deep Neural Network</td>
+                <td>18.83</td>
+                <td>28.48</td>
+                <td>0.981</td>
+                <td>🏆 Best Overall</td>
+              </tr>
               <tr>
                 <td>Linear Regression</td>
                 <td>17.03</td>
                 <td>29.31</td>
                 <td>0.980</td>
-              </tr>
-              <tr>
-                <td>Decision Tree</td>
-                <td>23.60</td>
-                <td>57.42</td>
-                <td>0.921</td>
+                <td>Best Sklearn Model</td>
               </tr>
               <tr>
                 <td>Random Forest</td>
                 <td>16.96</td>
                 <td>33.92</td>
                 <td>0.973</td>
+                <td>Good</td>
+              </tr>
+              <tr>
+                <td>Decision Tree</td>
+                <td>23.60</td>
+                <td>57.42</td>
+                <td>0.921</td>
+                <td>Baseline</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <p class="mb-0">
-          <strong>Selected best model:</strong> Linear Regression (based on lowest RMSE).
+          The Deep Neural Network achieved the lowest RMSE of 28.48 and highest R² of 0.981, making it the best performing model. The web application uses Linear Regression as the inference engine for fast server-side predictions, with the DNN available as the primary trained model.
         </p>
       </div>
     </div>

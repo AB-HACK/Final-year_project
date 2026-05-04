@@ -5,6 +5,7 @@ matplotlib
 seaborn
 flask
 joblib
+tensorflow>=2.13.0
 jupyter
 notebook
 ipykernel
