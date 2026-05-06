@@ -81,7 +81,12 @@
         </div>
 
         <p class="mb-0">
-          The Deep Neural Network achieved the lowest RMSE of 28.48 and highest R² of 0.981, making it the best performing model. The web application uses Linear Regression as the inference engine for fast server-side predictions, with the DNN available as the primary trained model.
+          The Deep Neural Network is used directly for predictions 
+          in the PredictAgro web application. The model takes 16 
+          engineered features as input, scales them using a 
+          StandardScaler, and passes them through a 3-layer neural 
+          network (128 → 64 → 32 neurons) with BatchNormalization 
+          and Dropout regularisation to generate price forecasts.
         </p>
       </div>
     </div>
