@@ -107,8 +107,11 @@
 {% endblock %}
 
 {% block extra_scripts %}
+<script id="commodity-data" type="application/json">
+{{ commodity_state_market|safe }}
+</script>
 <script>
-const commodityStateMarket = {{ commodity_state_market|safe }};
+const commodityStateMarket = JSON.parse(document.getElementById("commodity-data").textContent);
 
 const commoditySelect = document.getElementById("commodity");
 const stateSelect = document.getElementById("admin1");
